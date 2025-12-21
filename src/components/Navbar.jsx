@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { config } from '../data/PortfolioData';
 import useTheme from '../hooks/useTheme';
-import { FaMoon, FaSun, FaBars } from 'react-icons/fa';
+import { FaMoon, FaSun, FaBars, FaFileDownload } from 'react-icons/fa';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -21,6 +21,7 @@ export default function Navbar() {
   return (
     <nav className="nav-modern">
       <div className="nav-inner">
+        
         {/* Logo */}
         <div
           className="nav-logo"
@@ -36,6 +37,18 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+
+          {/* ✅ RESUME (DESKTOP) */}
+          <a
+    href="/resume/Mahesh_Misal_Resume.pdf"
+  download
+  target="_blank"
+  rel="noopener noreferrer"
+  className="resume-link"
+>
+  Download Resume
+</a>
+
         </div>
 
         {/* Actions */}
@@ -62,6 +75,17 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+
+          {/* ✅ RESUME (MOBILE) */}
+          <a
+              href="/resume/Mahesh_Misal_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            onClick={handleClick}
+            className="mobile-resume"
+          >
+            <FaFileDownload /> Download Resume
+          </a>
         </div>
       )}
     </nav>
