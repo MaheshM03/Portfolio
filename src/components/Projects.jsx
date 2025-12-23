@@ -34,7 +34,7 @@ export default function Projects() {
                   <div className="project-buttons">
                     {project.liveUrl && (
                       <a 
-                        href={project.liveUrl} 
+                        href= "https://www.qurinomsolutions.com/"
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="project-btn project-btn-live"
