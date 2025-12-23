@@ -5,6 +5,14 @@ export default function useTheme() {
     const stored = localStorage.getItem('theme');
     return stored ? stored : 'dark';
   };
+  useEffect(() => {
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
+
+  document.documentElement.setAttribute('data-theme', systemTheme);
+}, []);
+
 
   const [theme, setTheme] = useState(getInitialTheme);
 
