@@ -30,29 +30,25 @@ export const skills = [
     icon: FaLaptopCode,
     title: "Frontend Development",
     desc: "React, HTML5, CSS3, JavaScript, TypeScript, Tailwind CSS",
-    delay: "0.1s",
-    duration: "15s",
+    proficiency: 90, // Add proficiency percentage
   },
   {
     icon: FaServer,
     title: "Backend Development",
     desc: "Node.js, Express, REST APIs, MongoDB",
-    delay: "0.2s",
-    duration: "18s",
+    proficiency: 85,
   },
   {
     icon: FaRobot,
     title: "AI & Prompt Engineering",
     desc: "GPT Models, Claude, LangChain, Prompt Optimization, AI Integration, LLM Fine-tuning",
-    delay: "0.3s",
-    duration: "20s",
+    proficiency: 88,
   },
   {
     icon: FaCloud,
     title: "Cloud & DevOps",
     desc: "AWS, Docker, Kubernetes, CI/CD, Git, GitHub Actions, Vercel, Netlify",
-    delay: "0.4s",
-    duration: "17s",
+    proficiency: 80,
   },
 ];
 
@@ -63,21 +59,24 @@ export const projects = [
     title: "Company Official Website",
     desc: "Designed and developed a responsive corporate website using React, delivering a polished user experience, clear brand communication, and optimized performance across all devices.",
     tags: ["React", "JavaScript", "Responsive Design"],
-    delay: "0.3s",
+    liveUrl: "https://example.com", // Add your live URL
+    githubUrl: "https://github.com/MaheshM03/company-website", // Add your GitHub repo
   },
   {
     icon: FaTasks,
     title: "Task Manager",
     desc: "A modern task management platform featuring real-time analytics dashboards, advanced filtering, and productivity tracking for efficient workflow management.",
     tags: ["React.js", "JavaScript"],
-    delay: "0.5s",
+    liveUrl: "https://task-manager-demo.com",
+    githubUrl: "https://github.com/MaheshM03/task-manager",
   },
   {
     icon: FaShoppingCart,
     title: "E-Commerce Platform",
     desc: "Full-stack e-commerce solution with real-time inventory management, secure authentication, and payment gateway integration.",
     tags: ["React.js", "Express", "Node.js"],
-    delay: "0.7s",
+    liveUrl: "https://ecommerce-demo.com",
+    githubUrl: "https://github.com/MaheshM03/ecommerce-platform",
   },
 ];
 

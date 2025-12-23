@@ -9,30 +9,64 @@ export default function Skills() {
 
         <div className="grid-3">
           {skills.map((skill, i) => {
-            const Icon = skill.icon; // ✅ IMPORTANT
+            const Icon = skill.icon;
+            const proficiency = skill.proficiency || 85; // Default 85% if not specified
 
             return (
-              <div key={i} className="glass-effect fade-in-up">
+              <div key={i} className="skill-card-enhanced glass-effect fade-in-up">
                 
-                {/* ICON */}
-                <div
-                  style={{
-                    fontSize: '3rem',
-                    marginBottom: '1rem',
-                    display: 'flex',
-                    justifyContent: 'center'
-                  }}
-                >
-                  <Icon /> {/* ✅ RENDER ICON AS JSX */}
+                {/* CIRCULAR PROGRESS */}
+                <div className="skill-circle-wrapper">
+                  <svg className="skill-circle" viewBox="0 0 120 120">
+                    {/* Background Circle */}
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="54"
+                      fill="none"
+                      stroke="var(--border-color)"
+                      strokeWidth="8"
+                    />
+                    {/* Progress Circle */}
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="54"
+                      fill="none"
+                      stroke="var(--primary-color)"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      strokeDasharray={`${2 * Math.PI * 54}`}
+                      strokeDashoffset={`${2 * Math.PI * 54 * (1 - proficiency / 100)}`}
+                      className="skill-progress-circle"
+                      style={{
+                        animationDelay: `${i * 0.1}s`
+                      }}
+                    />
+                  </svg>
+                  
+                  {/* Icon in Center */}
+                  <div className="skill-icon-center">
+                    <Icon size={32} />
+                  </div>
+                  
+                  {/* Percentage */}
+                  <div className="skill-percentage">{proficiency}%</div>
                 </div>
 
-                <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem' }}>
-                  {skill.title}
-                </h3>
+                <h3 className="skill-title">{skill.title}</h3>
+                <p className="skill-desc">{skill.desc}</p>
 
-                <p style={{ opacity: 0.9 }}>
-                  {skill.desc}
-                </p>
+                {/* Linear Progress Bar Alternative */}
+                <div className="skill-bar-wrapper">
+                  <div 
+                    className="skill-bar-fill"
+                    style={{
+                      width: `${proficiency}%`,
+                      animationDelay: `${i * 0.1}s`
+                    }}
+                  ></div>
+                </div>
               </div>
             );
           })}
