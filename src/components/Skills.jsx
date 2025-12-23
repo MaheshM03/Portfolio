@@ -44,12 +44,12 @@ export default function Skills() {
                       }}
                     />
                   </svg>
-                  
+
                   {/* Icon in Center */}
                   <div className="skill-icon-center">
                     <Icon size={32} />
                   </div>
-                  
+
                   {/* Percentage */}
                   <div className="skill-percentage">{proficiency}%</div>
                 </div>
